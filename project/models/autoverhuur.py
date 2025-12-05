@@ -17,10 +17,10 @@ class Autoverhuur:
         try:
             cur = conn.cursor()
             query = '''
-            INSERT INTO Rentals (customerID, carID, start_date, end_date)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO Rentals (customerID, carID, start_date, end_date, price)
+            VALUES (?, ?, ?, ?, ?)
             '''
-            parameters = (self._customerID, self._carID, self._start_date, self._end_date)
+            parameters = (self._customerID, self._carID, self._start_date, self._end_date, self._price)
             cur.execute(query, parameters)
             conn.commit()
         except Exception as e:

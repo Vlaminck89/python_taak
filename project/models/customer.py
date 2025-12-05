@@ -36,5 +36,10 @@ class Customer:
         "\nAddress: " + self._address)
     
 if __name__ == '__main__':
-    c = Customer('Thomas', 'Vlaminck', 'thomasvlaminck89@gmail.com', '0473269619', 'Karel-Mestdaghstraat 71')
-    print(c)
+    first = input('Geef de voornaam:\n')
+    last = input('Geef de achternaam:\n')
+    mail = input('Geef het e-mail adres:\n')
+    phone = input('Geef het telefoonnummer:\n')
+    address = input('Geef het adres:\n')
+    customer = Customer(first, last, mail, phone, address)
+    print(customer)

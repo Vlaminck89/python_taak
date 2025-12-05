@@ -14,7 +14,7 @@ class Car:
         self._license_plate = str(license_plate)
         self._price = float(price)
         
-    def voeg_klant_toe(self, conn):
+    def voeg_auto_toe(self, conn):
         try:
             cur = conn.cursor()
             query = '''
@@ -37,6 +37,10 @@ class Car:
 
 
 if __name__ == '__main__':
-    car = Car('BMW', '330E', 2023, '2-DEB-213', 200)
-
+    brand = input('Geef het merk van de auto:\n')
+    model = input('Geef het model van de auto:\n')
+    year = int(input('Geef het bouwjaar van de auto:\n'))
+    license_plate = input('Geef de nummerplaat van de auto:\n')
+    price = float(input('Geef de huurprijs van de auto:\n'))
+    car = Car(brand, model, year, license_plate, price)
     print(car)
